@@ -26,8 +26,11 @@ End of the timer
 
 # Staff
 Lukas: Programmer/Unity Integration
+
 Paul: Character Designer/Sculpt/Texturing/UI
+
 Alexy: Level Designer/Hard Surface/Texturing/Animation
+
 Elias: Level Designer/Hard surface/Texturing/Animation
 
 # Credits
