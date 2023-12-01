@@ -9,6 +9,7 @@ A Fighting Game 1v1 in 2.5D with a Space/Sci-Fi Theme.
 # Featured
 
 Two Characters
+
 Two Players
 Two Stages
 3D Assets
