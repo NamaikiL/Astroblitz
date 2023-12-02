@@ -1,13 +1,10 @@
 # Astroblitz
-
 Versus Fighter Smash Bros like made in Unity3D.
 
 # Projet “Astroblitz”
-
 A Fighting Game 1v1 in 2.5D with a Space/Sci-Fi Theme.
 
 # Featured
-
 Two Characters
 
 Two Players
@@ -22,6 +19,7 @@ Projection Damage: Depending on the speed at which a player is thrown by their o
 
 # Victory Conditions
 K.O. the other player
+
 End of the timer
 
 # Staff
@@ -37,7 +35,6 @@ Elias: Level Designer/Hard surface/Texturing/Animation
 Rayan →  SpaceShip
 
 # Assets Used:
-
 [OToon - URP Toon Shading | UnityPackage | Eric Hu](https://assetstore.unity.com/packages/vfx/shaders/otoon-urp-toon-shading-216102)
 
 [Skybox Series Free | UnityPackage | Avionx](https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633)
