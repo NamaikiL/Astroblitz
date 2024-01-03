@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 13997642}
   - component: {fileID: 13997644}
   - component: {fileID: 13997643}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,6 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e83eadc11b2024face15f19ee58cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!1 &441442486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 520465924}
   - component: {fileID: 520465925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1671,7 +1672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 912199205}
   - component: {fileID: 912199206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

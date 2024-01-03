@@ -1,44 +1,48 @@
 using UnityEngine;
 
-public class MapManager : MonoBehaviour
+namespace _Scripts.Manager
 {
-
-    #region Variables
-
-    // Public Variables.
-    [Header("Map Parameters for players")]
-    public float moveSpeedPlayer = 6f;
-    public float jumpForcePlayer = 1.5f;
-    public float gravityPlayer = 6f;
-    public float jumpTimePlayer = 0.1f;
-
-    // Public Static Variables.
-    public static MapManager instance;
-    
-    #endregion
-    
-    #region Properties
-
-    public float MoveSpeed => moveSpeedPlayer;
-    public float JumpForce => jumpForcePlayer;
-    public float Gravity => gravityPlayer;
-    public float JumpTime => jumpTimePlayer;
-
-    #endregion
-
-    #region Builtin Methods
-
-    private void Awake()
+    public class MapManager : MonoBehaviour
     {
-        if (instance != null)
+
+        #region Variables
+        
+        [Header("Map Parameters for players")]
+        public float moveSpeedPlayer = 6f;
+        public float jumpForcePlayer = 1.5f;
+        public float gravityPlayer = 6f;
+        public float jumpTimePlayer = 0.1f;
+
+        // Instance Variables.
+        private static MapManager _instance;
+    
+        #endregion
+    
+        #region Properties
+
+        public float MoveSpeed => moveSpeedPlayer;
+        public float JumpForce => jumpForcePlayer;
+        public float Gravity => gravityPlayer;
+        public float JumpTime => jumpTimePlayer;
+
+        public static MapManager Instance => _instance;
+
+        #endregion
+
+        #region Builtin Methods
+
+        /**
+         * <summary>
+         * Awake is called when an enabled script instance is being loaded.
+         * </summary>
+         */
+        private void Awake()
         {
-            Destroy(this);
-            return;
+            if (_instance != null) Destroy(this);
+            _instance = this;
         }
 
-        instance = this;
+        #endregion
+
     }
-
-    #endregion
-
 }

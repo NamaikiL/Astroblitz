@@ -1,36 +1,45 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationsController : MonoBehaviour
+namespace _Scripts.AnimationsScripts
 {
-    #region Variables
-
-    // Public Variables.
-    [Header("Hitbox")]
-    public List<Collider> attackHitBoxes;
-
-    #endregion
-    
-    #region Animation Events
-
-    // Event that activate the colliders for each attack at the start.
-    public void AttackStart()
+    public class AnimationsController : MonoBehaviour
     {
-        foreach (Collider collider in attackHitBoxes)
+        #region Variables
+    
+        [Header("Hit-box")]
+        public List<Collider> attackHitBoxes;
+
+        #endregion
+    
+        #region Animation Events
+
+        /**
+         * <summary>
+         * Event that activate the colliders for each attack at the start.
+         * </summary>
+         */
+        public void AttackStart()
         {
-            collider.enabled = true;
+            foreach (Collider colliderBox in attackHitBoxes)
+            {
+                colliderBox.enabled = true;
+            }
         }
-    }
 
     
-    // Event that deactivate the colliders for each attack at the end.
-    public void AttackEnd()
-    {
-        foreach (Collider collider in attackHitBoxes)
+        /**
+         * <summary>
+         * Event that deactivate the colliders for each attack at the end.
+         * </summary>
+         */
+        public void AttackEnd()
         {
-            collider.enabled = false;
+            foreach (Collider colliderBox in attackHitBoxes)
+            {
+                colliderBox.enabled = false;
+            }
         }
+        #endregion
     }
-    #endregion
 }

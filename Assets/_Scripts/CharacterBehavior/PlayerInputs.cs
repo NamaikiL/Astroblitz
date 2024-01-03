@@ -3,18 +3,21 @@ using UnityEngine;
 public class PlayerInputs : MonoBehaviour
 {
     #region Variables
-
-    // Public Variables.
+    
     [Header("Controls")] 
     public KeyCode horizontalRight; 
     public KeyCode horizontalLeft;
+    public KeyCode verticalDown;
+    public KeyCode verticalUp;
     public KeyCode jump;
     public KeyCode attack;
     
-    // Private Variables.
+    // Player Movements Values Variables.
     private float _horizontal;
     private bool _jumped;
     private bool _attack;
+    private bool _down;
+    private bool _up;
     
     #endregion
 
@@ -23,35 +26,48 @@ public class PlayerInputs : MonoBehaviour
     public float Horizontal => _horizontal;
     public bool Attack => _attack;
     public bool Jumped => _jumped;
+    public bool DownMovement => _down;
+    public bool UpMovement => _up;
     
     #endregion
 
     #region Builtin Methods
     
-    // Start is called before the first frame update.
+    /**
+     * <summary>
+     * Start is called before the first frame update.
+     * </summary>
+     */
     void Start()
     {
         PlayerControls();
     }
     
     
-    // Update is called once per frame.
+    /**
+     * <summary>
+     * Update is called once per frame.
+     * </summary>
+     */
     void Update()
     {
-        // Give the values for the directional variables based on Time.deltaTime.
-        if (Input.GetKey(horizontalRight)) _horizontal = Mathf.Clamp(_horizontal + Time.deltaTime, 0f, 1f);
-        else if (Input.GetKey(horizontalLeft)) _horizontal = Mathf.Clamp(_horizontal - Time.deltaTime, -1f, 0f);
-        else _horizontal = 0;
+        HorizontalMovementsCalculation();
 
         _jumped = Input.GetKey(jump);
         _attack = Input.GetKey(attack);
+        _down = Input.GetKey(verticalDown);
+        _up = Input.GetKey(verticalUp);
     }
 
     #endregion
 
     #region Custom Methods
 
-    // Private Function that put the local multiplayer controls respective to each players.
+    /**
+     * <summary>
+     * Function that put the local multiplayer controls respective to each players.
+     * </summary>
+     */
     private void PlayerControls()
     {
         switch (gameObject.name)
@@ -69,6 +85,19 @@ public class PlayerInputs : MonoBehaviour
                 attack = KeyCode.Keypad0;
                 break;
         }
+    }
+
+
+    /**
+     * <summary>
+     * Function to calculate the Horizontal Movements.
+     * </summary>
+     */
+    private void HorizontalMovementsCalculation()
+    {
+        if (Input.GetKey(horizontalRight)) _horizontal = Mathf.Clamp(_horizontal + Time.deltaTime, 0f, 1f);
+        else if (Input.GetKey(horizontalLeft)) _horizontal = Mathf.Clamp(_horizontal - Time.deltaTime, -1f, 0f);
+        else _horizontal = 0;
     }
 
     #endregion
