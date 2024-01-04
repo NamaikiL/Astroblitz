@@ -103,11 +103,12 @@ namespace _Scripts.Manager
 		// TO-DO: Change the function so we don't have to precise which player it is, that it does it automatically, if we decide to have more than two player. (Find a better way to do it.)
 		private void SpawnPlayer(string actualPlayer)
 		{
-			int playerIndex = actualPlayer.EndsWith("1") ? 0 : 1; 
+			int playerIndex = actualPlayer.EndsWith("1") ? 0 : 1;
+			string characterName = (playerIndex == 0) ? _player1Character : _player2Character;
 			Vector3 playerIndexSpawnPosition = playersSpawnPoint[playerIndex].transform.position;
-		
+			
 			GameObject player = Instantiate(
-				charactersObjects[ChooseCharacter(_player1Character)], 
+				charactersObjects[ChooseCharacter(characterName)], 
 				new Vector3(playerIndexSpawnPosition.x, playerIndexSpawnPosition.y + 1.5f, playerIndexSpawnPosition.z),
 				Quaternion.Euler(0f, (playerIndex == 0) ? 90f : -90f, 0f)
 			);
@@ -136,40 +137,26 @@ namespace _Scripts.Manager
 		 */
 		private void ApplyMaterial(string player, GameObject actualPlayer)
 		{
-			Material modelMaterial =
-				actualPlayer.transform.Find("Model").gameObject.GetComponent<Renderer>().material;
-			Material visorMaterial = actualPlayer.transform
-				.Find("mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head/Visor")
-				.gameObject.GetComponent<Renderer>().material;
+			string characterName = "";
+			string playerNumber = "";
 		
 			switch (player)
 			{
 				case "Player1":
-					if (_player1Character == "Unit 4-S")
-					{
-						modelMaterial = characterMaterials.Find(obj => obj.name == "Unit 4-S P1");
-						visorMaterial = characterVisorMaterials.Find(obj => obj.name == "Visor Unit 4-S P1");
-					}
-					else if (_player1Character == "Unit VTS")
-					{
-						modelMaterial = characterMaterials.Find(obj => obj.name == "Unit VTS P1");
-						visorMaterial = characterVisorMaterials.Find(obj => obj.name == "Visor Unit VTS P1");
-					}
+					characterName = _player1Character;
+					playerNumber = "P1";
 					break;
 				case "Player2":
-					if (_player2Character == "Unit 4-S")
-					{
-						modelMaterial = characterMaterials.Find(obj => obj.name == "Unit 4-S P1");
-						visorMaterial = characterVisorMaterials.Find(obj => obj.name == "Visor Unit 4-S P1");
-					}
-					else if (_player2Character == "Unit VTS")
-					{
-						modelMaterial = characterMaterials.Find(obj => obj.name == "Unit VTS P1");
-						visorMaterial = characterVisorMaterials.Find(obj => obj.name == "Visor Unit VTS P1");
-					}
+					characterName = _player2Character;
+					playerNumber = "P2";
 					break;
 			}
-		
+			actualPlayer.transform.Find("Model").gameObject.GetComponent<Renderer>().material = 
+				characterMaterials.Find(obj => obj.name == characterName + " " + playerNumber);
+			actualPlayer.transform
+				.Find("mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head/Visor")
+				.gameObject.GetComponent<Renderer>().material = 
+				characterVisorMaterials.Find(obj => obj.name == "Visor " + characterName + " " + playerNumber);
 		}
 
 		/**

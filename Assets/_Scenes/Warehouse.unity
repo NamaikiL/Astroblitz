@@ -3172,8 +3172,8 @@ MonoBehaviour:
   smoothSpeed: 2
   positionY: 1
   closeDistancePosY: 0
-  minX: -10
-  maxX: 10
+  minX: -16
+  maxX: 16
   minY: -7
   maxY: 7
   zoomMin: -13

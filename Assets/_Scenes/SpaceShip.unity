@@ -3465,7 +3465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeedPlayer: 4
   jumpForcePlayer: 2
-  gravityPlayer: 3
+  gravityPlayer: 4
   jumpTimePlayer: 0.1
 --- !u!1 &1516465097
 GameObject:
@@ -4285,6 +4285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e83eadc11b2024face15f19ee58cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!1 &1876942089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4401,8 +4402,8 @@ MonoBehaviour:
   smoothSpeed: 2
   positionY: 1
   closeDistancePosY: 0
-  minX: -10
-  maxX: 10
+  minX: -15
+  maxX: 15
   minY: -7
   maxY: 7
   zoomMin: -20

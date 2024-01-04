@@ -191,6 +191,32 @@ namespace _Scripts.CharacterBehavior
             _playerDamage = Mathf.Clamp(_playerDamage + damage, 0f, _maxDamage);
             _battleUIManager.UpdatePlayerPercentage(gameObject, _playerDamage); // Apply the damage on the UI.
         }
+
+
+        /**
+         * <summary>
+         * Function to change the attack type of the player attack.
+         * </summary>
+         * <param name="attackType">The attack type.</param>
+         * <param name="lightAttackType">The light attack type.</param>
+         * <param name="loudAttackType">The loud attack type.</param>
+         */
+        private void ChangeAttackType(CharacterAttack.AttackType attackType, CharacterAttack.LightAttacks lightAttackType, CharacterAttack.LoudAttacks loudAttackType)
+        {
+            foreach (CharacterAttack characterAttackScript in GetComponentsInChildren<CharacterAttack>())
+            {
+                if (attackType == CharacterAttack.AttackType.Light)
+                {
+                    characterAttackScript.CurrentAttackType = attackType;
+                    characterAttackScript.CurrentLightAttack = lightAttackType;
+                }
+                else
+                {
+                    characterAttackScript.CurrentAttackType = attackType;
+                    characterAttackScript.CurrentLoudAttack = loudAttackType;
+                }
+            }
+        }
     
     
         /**
@@ -215,21 +241,25 @@ namespace _Scripts.CharacterBehavior
                 // TO-DO: Apply every animations for each attack type.
                 if (_inputs.Attack)
                 {
-                    if (_inputs.Horizontal != 0f)
+                    if (_moveDirection.normalized.magnitude != 0f)
                     {
                         _animator.SetInteger($"AttackIdle", 2); // Light Side Attack.
+                        ChangeAttackType(CharacterAttack.AttackType.Light, CharacterAttack.LightAttacks.SideLight, CharacterAttack.LoudAttacks.None);
                     }
                     else if (_inputs.DownMovement)
                     {
                         _animator.SetInteger($"AttackIdle", 1); // Light Down Attack.
+                        ChangeAttackType(CharacterAttack.AttackType.Light, CharacterAttack.LightAttacks.DownLight, CharacterAttack.LoudAttacks.None);
                     }
                     else if (_inputs.UpMovement)
                     {
                         _animator.SetInteger($"AttackIdle", 3); // Light Up Attack.
+                        ChangeAttackType(CharacterAttack.AttackType.Light, CharacterAttack.LightAttacks.UpLight, CharacterAttack.LoudAttacks.None);
                     }
                     else
                     {
                         _animator.SetInteger($"AttackIdle", 0); // Light Neutral Attack.
+                        ChangeAttackType(CharacterAttack.AttackType.Light, CharacterAttack.LightAttacks.NeutralLight, CharacterAttack.LoudAttacks.None);
                     }
                     _animator.SetTrigger($"Attack");
                 }

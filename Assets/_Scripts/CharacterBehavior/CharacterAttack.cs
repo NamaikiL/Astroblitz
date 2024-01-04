@@ -19,7 +19,8 @@ namespace _Scripts.CharacterBehavior
             DownLight,
             NeutralLight,
             SideLight,
-            UpLight
+            UpLight,
+            None
         }
     
         public enum LoudAttacks
@@ -27,7 +28,8 @@ namespace _Scripts.CharacterBehavior
             DownLoud,
             NeutralLoud,
             SideLoud,
-            UpLoud
+            UpLoud,
+            None
         }
     
         [Header("Knock-back values")] 
@@ -61,18 +63,15 @@ namespace _Scripts.CharacterBehavior
     
         public AttackType CurrentAttackType
         {
-            get { return _currentAttackType; }
-            set { _currentAttackType = value; }
+            set => _currentAttackType = value;
         }
         public LightAttacks CurrentLightAttack
         {
-            get { return _currentLightAttack; }
-            set { _currentLightAttack = value; }
+            set => _currentLightAttack = value;
         }
         public LoudAttacks CurrentLoudAttack
         {
-            get { return _currentLoudAttack; }
-            set { _currentLoudAttack = value; }
+            set => _currentLoudAttack = value;
         }
     
         #endregion

@@ -75,12 +75,16 @@ public class PlayerInputs : MonoBehaviour
             case "Player1":
                 horizontalLeft = KeyCode.A;
                 horizontalRight = KeyCode.D;
+                verticalDown = KeyCode.S;
+                verticalUp = KeyCode.W;
                 jump = KeyCode.Space;
                 attack = KeyCode.G;
                 break;
             case "Player2":
                 horizontalLeft = KeyCode.LeftArrow;
                 horizontalRight = KeyCode.RightArrow;
+                verticalDown = KeyCode.DownArrow;
+                verticalUp = KeyCode.Keypad1;
                 jump = KeyCode.UpArrow;
                 attack = KeyCode.Keypad0;
                 break;
