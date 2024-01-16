@@ -41,13 +41,11 @@ Rayan →  SpaceShip
 
 [Minimalist Scalable Grid Prototype Materials | UnityPackage | MLAgent](https://assetstore.unity.com/packages/2d/textures-materials/minimalist-scalable-grid-prototype-materials-214264)
 
-[Unfortunate Spacemen OST - "Space Madness" | Music | New Blood Interactive](https://www.youtube.com/watch?v=BEPMJ7r51UI)
+[Tronicles SciFi | Music | Wee Free Music](https://www.youtube.com/watch?v=JUegvqJdyQI)
 
-[Terraria Calamity Mod Music - "Servants of The Scourge" - Theme of The Sentinels of The Devourer | Music | DM DOKURO](https://www.youtube.com/watch?v=dt30jWRMjLk)
+[One Cosmos | Music | Wee Free Music](https://www.youtube.com/watch?v=25LEeXuHclc)
 
-[Space Battle (original electronic composition) | Music | Gus ildirim](https://youtu.be/fxJZonT92CA?si=A8mmsWvqFBF-L-BO)
-
-[Rick Astley - Never Gonna Give You Up (Official Music Video) | Music | Rick Astley](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[Sirius SciFi | Music | Wee Free Music](https://www.youtube.com/watch?v=60llyQkMces)
 
 [Something being hit - Sound Effect | SFX | r0dg](https://www.youtube.com/watch?v=JcG_ugrzfHE)
 
